@@ -456,7 +456,15 @@ class WebKitWebViewController extends PlatformWebViewController {
       DateTime.fromMillisecondsSinceEpoch(0),
     );
   }
-
+  @override
+  Future<void> addUserScript(String script) async {
+    WKUserScript userScript = WKUserScript(script,
+      WKUserScriptInjectionTime.atDocumentStart,
+      isMainFrameOnly: true,
+    );
+    _webView.configuration.userContentController
+        .addUserScript(userScript);
+  }
   @override
   Future<void> runJavaScript(String javaScript) async {
     try {
@@ -866,7 +874,7 @@ class WebKitJavaScriptChannelParams extends JavaScriptChannelParams {
               ) {
                 if (weakReference.target != null) {
                   weakReference.target!(
-                    JavaScriptMessage(message: message.body!.toString()),
+                    JavaScriptMessage(message: jsonEncode(message.body)),
                   );
                 }
               };

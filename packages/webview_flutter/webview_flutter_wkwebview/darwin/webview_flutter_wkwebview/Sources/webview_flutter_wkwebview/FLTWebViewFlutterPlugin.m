@@ -62,6 +62,8 @@
   NSNumber *identifier = (NSNumber *)args;
   FWFWebView *webView =
       (FWFWebView *)[self.instanceManager instanceForIdentifier:identifier.longValue];
+    
+    [webView.configuration.preferences setValue:@YES forKey:@"allowFileAccessFromFileURLs"];
   return webView;
 }
 
