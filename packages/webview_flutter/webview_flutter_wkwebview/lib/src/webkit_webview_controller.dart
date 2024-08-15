@@ -712,17 +712,17 @@ var _flutter_webview_plugin_overrides = _flutter_webview_plugin_overrides || {
   }
 };
 
-let originalLog = console.log;
-let originalInfo = console.info;
-let originalWarn = console.warn;
-let originalError = console.error;
-let originalDebug = console.debug;
-
-console.log = function() { _flutter_webview_plugin_overrides.log("log", arguments); originalLog.apply(null, arguments) };
-console.info = function() { _flutter_webview_plugin_overrides.log("info", arguments); originalInfo.apply(null, arguments) };
-console.warn = function() { _flutter_webview_plugin_overrides.log("warning", arguments); originalWarn.apply(null, arguments) };
-console.error = function() { _flutter_webview_plugin_overrides.log("error", arguments); originalError.apply(null, arguments) };
-console.debug = function() { _flutter_webview_plugin_overrides.log("debug", arguments); originalDebug.apply(null, arguments) };
+// let originalLog = console.log;
+// let originalInfo = console.info;
+// let originalWarn = console.warn;
+// let originalError = console.error;
+// let originalDebug = console.debug;
+//
+// console.log = function() { _flutter_webview_plugin_overrides.log("log", arguments); originalLog.apply(null, arguments) };
+// console.info = function() { _flutter_webview_plugin_overrides.log("info", arguments); originalInfo.apply(null, arguments) };
+// console.warn = function() { _flutter_webview_plugin_overrides.log("warning", arguments); originalWarn.apply(null, arguments) };
+// console.error = function() { _flutter_webview_plugin_overrides.log("error", arguments); originalError.apply(null, arguments) };
+// console.debug = function() { _flutter_webview_plugin_overrides.log("debug", arguments); originalDebug.apply(null, arguments) };
 
 window.addEventListener("error", function(e) {
   log("error", e.message + " at " + e.filename + ":" + e.lineno + ":" + e.colno);
