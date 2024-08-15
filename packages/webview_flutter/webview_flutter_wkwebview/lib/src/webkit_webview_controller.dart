@@ -724,9 +724,9 @@ var _flutter_webview_plugin_overrides = _flutter_webview_plugin_overrides || {
 // console.error = function() { _flutter_webview_plugin_overrides.log("error", arguments); originalError.apply(null, arguments) };
 // console.debug = function() { _flutter_webview_plugin_overrides.log("debug", arguments); originalDebug.apply(null, arguments) };
 
-window.addEventListener("error", function(e) {
-  log("error", e.message + " at " + e.filename + ":" + e.lineno + ":" + e.colno);
-});
+// window.addEventListener("error", function(e) {
+//   log("error", e.message + " at " + e.filename + ":" + e.lineno + ":" + e.colno);
+// });
       ''',
       WKUserScriptInjectionTime.atDocumentStart,
       isMainFrameOnly: true,
